@@ -70,4 +70,4 @@ if __name__ == "__main__":
    main()
    connnect()
 
-####python -m PyInstaller --onefile --disable-windowed-traceback --hidden-import=pyotp --hidden-import=subprocess --hidden-import=glob --hidden-import=time --hidden-import=ping3 auto.py
+####python -m PyInstaller --onefile --disable-windowed-traceback --hidden-import=pyotp --hidden-import=subprocess --hidden-import=glob --hidden-import=time --hidden-import=ping3 --ico=icon.ico auto.py
