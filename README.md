@@ -1,4 +1,4 @@
-# Auto_OpenVPN
+# Auto_LogOn_OpenVPN
 OpenVPN login automation for windows
 
 # instructions
