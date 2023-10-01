@@ -1,4 +1,4 @@
-
+#####lấy thông tin từ các file txt, chỉnh sửa file ovpn và chạy script tới openvpn.
 def main():
  print("Write by Kietpg with love <3 \n")
  print("đọc hướng dẫn trước khi sử dụng :> hoặc liên hệ kietpg@vng.com.vn")
@@ -28,11 +28,23 @@ def main():
 # Use glob to find the first .ovpn file in the current directory
  ovpn_files = glob.glob("*.ovpn")
  script_path = ovpn_files[0]
+ # Check if the line already exists in the file
+ with open(script_path, "r") as file4:
+    lines = file4.readlines()
+ if "auth-user-pass pwd.conf" in lines[-1]:
+    print('file opvn đã được cài đặt')
+ elif "auth-user-pass pwd.conf" not in lines:
+    # Line does not exist, add it to the end of the file
+    lines.append("auth-user-pass pwd.conf" + "\n")  # Add a newline character
+    print("Đã edit file ovpn")
+    # Write the modified content back to the file
+    with open(script_path, "w") as file4:
+        file4.writelines(lines)
 #run openvpn
  openvpn_executable = r'C:\Program Files\OpenVPN\bin\openvpn-gui.exe'
  subprocess.run(f'"{openvpn_executable}" --command connect "{script_path}"', shell=True, check=True)
 
-#check if connected
+#ping liên tục tới 10.115.76.1 để kiểm tra đã kết nối hay chưa
 def connnect():
  import time
  import ping3
@@ -48,12 +60,14 @@ def connnect():
             time.sleep(3)
             break
         else:
-            print(f"Awaiting connection")
+            print(f"Đang kết nối...")
             time.sleep(1)
             attempts += 1
  else:
-        print(f"Kết nối không thành công. Liên hệ kietpg")
+        print(f"Kết nối không thành công. Hãy thử lại.")
         subprocess.run(f'"{openvpn_executable}" --command disconnect "{script_path}"', shell=True, check=True)
 if __name__ == "__main__":
    main()
    connnect()
+
+####python -m PyInstaller --onefile --disable-windowed-traceback --hidden-import=pyotp --hidden-import=subprocess --hidden-import=glob --hidden-import=time --hidden-import=ping3 auto.py
