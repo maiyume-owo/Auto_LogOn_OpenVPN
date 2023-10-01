@@ -1,5 +1,5 @@
 #####lấy thông tin từ các file txt, chỉnh sửa file ovpn và chạy script tới openvpn.
-__name__ == "__main__":
+__name__ == "__main__"
 def main():
  print("Write by Kietpg with love <3 \n")
  print("đọc hướng dẫn trước khi sử dụng :> hoặc liên hệ kietpg@vng.com.vn")
