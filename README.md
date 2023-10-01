@@ -1,6 +1,5 @@
 # Auto_OpenVPN
 OpenVPN login automation for windows
-vietnamese below
 
 # instructions
 
@@ -19,6 +18,7 @@ vietnamese below
 contact me if you need any help or want to help me :( 
 
 .maiyumekawaii
+
 k.phamgia1809@gmail.com
 
 # hướng dẫn
@@ -38,4 +38,5 @@ k.phamgia1809@gmail.com
 liên hệ mình nếu có vấn đề hoặc muốn giúp mình :>
 
 .maiyumekawaii
+
 k.phamgia1809@gmail.com
