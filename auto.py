@@ -49,6 +49,7 @@ def connnect():
  import time
  import ping3
  import glob
+ import subprocess
  ovpn_files = glob.glob("*.ovpn")
  script_path = ovpn_files[0]
  openvpn_executable = r'C:\Program Files\OpenVPN\bin\openvpn-gui.exe'
